@@ -165,7 +165,7 @@ class ScenarioController(QtCore.QThread):
         self.display_temp()
         self.log("Значение температуры установлено на %s" % new_temp)
     
-    def check(self, cond_desc='[условие перехода без описания]', condition=None, *args, **kwargs,):
+    def check(self, cond_desc='[условие перехода без описания]', condition=None, *args, **kwargs):
         '''Проверить выполнения условия перехода и вернуть результат проверки и описание условия для журнала'''
         if condition is not None and callable(condition):
             cond = condition(*args, **kwargs)
