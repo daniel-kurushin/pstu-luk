@@ -10,7 +10,7 @@ from PyQt5 import QtGui, QtCore, QtWidgets
 import luk_op_gui_upd as gui
 
 elems = {}
-
+ зкprin
 # Override-класс интерфейса для реализации обработки кастомных сигналов
 class LukWidget(QtWidgets.QMainWindow, gui.Ui_MainWindow):
 
@@ -55,7 +55,7 @@ class Element:
         if self.widget is not None:
             self.update_colors(self.state)
         else:
-            print('Warning: Nothing to change')
+            print('Warning: Nothing to change', file=sys.stderr)
     
     def update_colors(self, color_state = 0):
         '''Перерисовываем спрайт с наложением соответствующего состоянию цвета'''
@@ -74,7 +74,7 @@ class Element:
             p.end()
             self.widget.setPixmap(pxm)
         else:
-            print('Warning: Nothing to update')
+            print('Warning: Nothing to update', file=sys.stderr)
     
     def set_state(self, new_state, condition=None, *args, **kwargs):
         '''Установить состояние вручную'''
